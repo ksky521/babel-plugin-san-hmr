@@ -1,6 +1,6 @@
 {
     "name": "babel-plugin-san-hmr",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Babel plugin from San component hot module replacement",
     "main": "index.js",
     "scripts": {

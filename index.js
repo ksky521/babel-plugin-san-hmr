@@ -3,6 +3,7 @@
  * @author wangyongqing <wangyongqing01@baidu.com>
  */
 const genId = require('./gen-id');
+const sanHMRAPI = require.resolve('san-hot-reload-api');
 const sanModuleName = 'san';
 const sanComponentClassName = 'Component';
 function getHmrString(resourcePath) {
@@ -10,7 +11,7 @@ function getHmrString(resourcePath) {
     return `
     // 下面代码是 san-hmr
     if (module.hot) {
-        var hotApi = require('san-hot-reload-api');
+        var hotApi = require('${sanHMRAPI}');
         hotApi.install(require('san'), false);
         if (!hotApi.compatible) {
             throw new Error('san-hot-reload-api is not compatible with the version of Vue you are using.');
