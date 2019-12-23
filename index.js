@@ -91,7 +91,7 @@ module.exports = ({types: t, parse}) => {
                     if (isSanComponent) {
                         // 添加hmr 代码
                         const hmrCode = getHmrString(filename);
-                        nodePath.insertAfter(parse(hmrCode).program.body[0]);
+                        nodePath.insertAfter(parse(hmrCode, {filename}).program.body[0]);
                     }
                 }
             }
