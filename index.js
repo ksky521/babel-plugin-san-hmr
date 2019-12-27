@@ -28,7 +28,6 @@ function getHmrString(resourcePath) {
     `;
 }
 
-// TODO attach 需要移出，不然会导致不停追加 innerHTML
 function nodeWalker(t, parse, nodePath) {
     const node = nodePath.node;
     const {filename} = nodePath.hub.file.opts; // eslint-disable-line
@@ -96,9 +95,9 @@ module.exports = ({types: t, parse}) => {
     const walker = nodeWalker.bind(this, t, parse);
     return {
         visitor: {
-            ClassDeclaration(nodePath) {
-                walker(nodePath);
-            },
+            // ClassDeclaration(nodePath) {
+            //     walker(nodePath);
+            // },
             ExportDefaultDeclaration(nodePath) {
                 walker(nodePath);
             }
